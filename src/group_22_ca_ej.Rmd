@@ -5,19 +5,20 @@ date: "11/14/2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include=FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(tidyverse)
 library(janitor)
 library(here)
+library(gapminder)
 ```
 
-```{r}
+```{r, warning = FALSE, message = FALSE}
 ces <- read_csv(here("data", "ces3demographics.csv")) %>%
   clean_names
 ```
 
-```{r}
+```{r gg-oz-gapminder, fig.cap = "Figure 1: CalEnviroScreen Pollution Burden Score Compared Against the Percentage of White Individuals"}
 # Creating a basic ggplot demonstrating the white population vs. CalEnviroScreen pollution burden score
 
 ggplot(data = ces, aes(x = white_percent,
@@ -27,4 +28,7 @@ ggplot(data = ces, aes(x = white_percent,
   scale_fill_gradient(low = "peachpuff", high = "red4") +
   theme_minimal()
 ```
+Data Citation:
 
+https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-30
+https://www.census.gov/prod/cen2010/cph-2-6.pdf
