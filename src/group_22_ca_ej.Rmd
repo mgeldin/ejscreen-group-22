@@ -24,11 +24,17 @@ ces <- read_csv(here("data", "ces3demographics.csv")) %>%
 ggplot(data = ces, aes(x = white_percent,
                        y = ces_3_0_score)) +
   geom_hex() +
-  labs(x = "Percent White", y = "CalEnviroScreen Pollution Burden Score") +
-  scale_fill_gradient(low = "peachpuff", high = "red4") +
+  labs(x = "Percent White", 
+       y = "CalEnviroScreen Pollution Burden Score",
+       title = "Percentage of White population being affected by pollution.") +
+  scale_fill_gradient(low = "peachpuff", high = "red4", name = "Count") +
   theme_minimal()
 ```
-Data Citation:
 
-https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-30
-https://www.census.gov/prod/cen2010/cph-2-6.pdf
+### Analysis
+Figure 1 demonstrates a large spread in the percentage of white population being affected by multiple sources of pollution. Overall, this 2D hexbin demonstrates how there is a large percentage of the white population experiencing little to no pollution. 
+
+### Citation:
+CalEnviroScreen 3.0. 25 June 2018, https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-30. 
+
+2010 Census Population and Housing Unit Counts. Issued Aug. 2012, https://www.census.gov/prod/cen2010/cph-2-6.pdf.
