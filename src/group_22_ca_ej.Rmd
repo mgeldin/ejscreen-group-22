@@ -4,6 +4,9 @@ author: "Michelle Geldin and Alessandra Puig-Santana"
 date: "11/14/2021"
 output: html_document
 ---
+### Overview
+
+The following report utilizes CalEnviroScreen's Pollution Burden Score from CalEnviroScreen 3.0 in addition to Census data from 2010 to explore the percentage of the White population that is impacted by pollution burden. While CalEnviroScreen provides a wealth of information, only the Pollution Burden Score is used in this report.
 
 ```{r setup, include=FALSE, warning = FALSE, message = FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
@@ -26,7 +29,7 @@ ggplot(data = ces, aes(x = white_percent,
   geom_hex() +
   labs(x = "Percent White", 
        y = "CalEnviroScreen Pollution Burden Score",
-       title = "Percentage of White population being affected by pollution.") +
+       title = "Percentage of White population being affected by pollution") +
   scale_fill_gradient(low = "peachpuff", high = "red4", name = "Count") +
   theme_minimal()
 ```
